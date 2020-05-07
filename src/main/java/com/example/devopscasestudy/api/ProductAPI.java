@@ -45,6 +45,12 @@ public class ProductAPI {
 		return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
 	}
 	
+	@GetMapping("/products/name/{productName}")
+	public ResponseEntity<List<Product>> findByProductName(@PathVariable("productName") String productName) {
+		List<Product> products = productRepository.findByProductNameIgnoreCase(productName);
+		return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
+	}
+	
 	@DeleteMapping("/products/delete/{id}")
 	public ResponseEntity<List<Product>> delete(@PathVariable("id") Integer id) {
 		productRepository.delete(productRepository.getOne(id));
