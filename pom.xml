@@ -46,6 +46,29 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		
+<dependency>
+<groupId>info.cukes</groupId>
+<artifactId>cucumber-java</artifactId>
+<version>1.2.5</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>info.cukes</groupId>
+<artifactId>cucumber-junit</artifactId>
+<version>1.2.5</version>
+<scope>test</scope>
+</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -103,16 +126,25 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				
+				<configuration>
+                <finalName>devopscasestudy-docker</finalName>
+</configuration>
+				
 			</plugin>
 			
 <plugin>
 <groupId>org.apache.maven.plugins</groupId>
 <artifactId>maven-release-plugin</artifactId>
 <version>2.5.1</version>
+
 <configuration>
 <tagNameFormat>v@{project.version}</tagNameFormat>
 <autoVersionSubmodules>true</autoVersionSubmodules>
 </configuration>
+
+
+
 </plugin>
 			
 <plugin>
